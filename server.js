@@ -9,7 +9,7 @@ const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const helmet = require('helmet');
 const csrf = require('csurf');
-const { middlewareGlobal, checkCsrfError, csrfMiddleware } = require('./src/middlewares/middleware');
+const { middlewareGlobal, checkError, csrfMiddleware } = require('./src/middlewares/middleware');
 
 
 mongoose.connect(process.env.CONNECTIONSTRING)
@@ -45,7 +45,7 @@ app.use(csrf());
 
 // Nossos middlewares
 app.use(middlewareGlobal);
-app.use(checkCsrfError);
+app.use(checkError);
 app.use(csrfMiddleware);
 app.use(routes);
 
