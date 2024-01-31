@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const validator = require('validator');
+const bcryptjs = require('bcryptjs');
 
 const LoginSchema = new mongoose.Schema({
   email: { type: String, required: true },
@@ -19,6 +20,8 @@ class Login {
     this.validate();
     if (this.errors.length > 0) return;
     try {
+      const salt = bcryptjs.genSaltSync();
+      this.body.password = bcryptjs.hashSync(this.body.password, salt);
       this.user = await LoginModel.create(this.body);
     } catch (e) {
       console.log('falha no registro:')
