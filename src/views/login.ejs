@@ -7,13 +7,13 @@
     <div class="col-lg-8 my-3">
       <h1 class="display-1 text-center">Criar Conta ou Entrar</h1>
       <p class="text-center lead">Faça login ou crie sua conta abaixo</p>
+      <%- include('includes/messages'); %>
     </div>
 
     <div class="row">
       <div class="col-lg">
         <h4>Faça seu cadastro</h4>
         <p>Se você ainda não possui conta, preencha o formulario abaixo:</p>
-        <%- include('includes/messages'); %>
         <form action="/login/register" method="POST">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>">
           <div class="mb-3">
