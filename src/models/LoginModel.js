@@ -30,6 +30,7 @@ class Login {
     } catch (e) {
       console.log('falha no registro:')
       console.log(e);
+      throw e;
     }
   }
 
