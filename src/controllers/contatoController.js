@@ -2,7 +2,7 @@ const Contato = require("../models/ContatoModel");
 
 
 exports.index = (req, res) => {
-  res.render('index-contato', {
+  res.render('contato', {
     contato: {}
   });
 };
@@ -31,5 +31,5 @@ exports.editIndex = async (req, res) => {
   if (!req.params.id) return res.render('404');
   const contato = await Contato.getById(req.params.id);
   if (!contato) return res.render('404');
-  return res.render('index-contato', { contato });
+  return res.render('contato', { contato });
 };
