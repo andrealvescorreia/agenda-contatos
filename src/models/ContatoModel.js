@@ -44,12 +44,21 @@ Contato.prototype.validate = function () {
 }
 
 Contato.prototype.cleanUp = function () {
-  // assures every key in the object is string
+  // assures that every key in the object is a string
   for (const key in this.body) {
     if (typeof this.body[key] !== 'string') {
       this.body[key] = '';
     }
+    this.body[key] = this.body[key].trim();
   }
+}
+
+Contato.prototype.edit = async function (id) {
+  console.log(this.body);
+  if (typeof id !== 'string') return;
+  this.validate();
+  if (this.errors.length > 0) return;
+  this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true })// new: true diz que assim que atualizar os dados, retornas os dados já atualizados
 }
 
 module.exports = Contato;
