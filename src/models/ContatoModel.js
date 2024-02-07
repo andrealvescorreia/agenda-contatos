@@ -46,7 +46,6 @@ Contato.prototype.cleanUp = function () {
 }
 
 Contato.prototype.edit = async function (id) {
-  console.log(this.body);
   if (typeof id !== 'string') return;
   this.validate();
   if (this.errors.length > 0) return;
