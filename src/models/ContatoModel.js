@@ -24,14 +24,6 @@ Contato.prototype.register = async function () {
   this.contato = await ContatoModel.create(this.body);
 };
 
-// static
-Contato.getById = async function (id) {
-  if (typeof id !== 'string') return;
-  const user = await ContatoModel.findById(id);
-  return user;
-};
-
-
 Contato.prototype.validate = function () {
   this.cleanUp();
 
@@ -60,5 +52,22 @@ Contato.prototype.edit = async function (id) {
   if (this.errors.length > 0) return;
   this.contato = await ContatoModel.findByIdAndUpdate(id, this.body, { new: true })// new: true diz que assim que atualizar os dados, retornas os dados já atualizados
 }
+
+// static
+Contato.getById = async function (id) {
+  if (typeof id !== 'string') return;
+  const contato = await ContatoModel.findById(id);
+  return contato;
+};
+
+// retorna todos os contatos em ordem de criação (mais recente a mais antigo)
+Contato.getContatos = async function () {
+  const contatos = await ContatoModel.find()
+    .sort({ criadoEm: -1 });
+  // -1: decrescente, 1: crescente.
+
+  return contatos;
+};
+
 
 module.exports = Contato;
