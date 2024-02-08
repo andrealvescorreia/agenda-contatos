@@ -16,7 +16,16 @@ mongoose.connect(process.env.CONNECTIONSTRING)
   .then(() => app.emit('pronto'))
   .catch((e) => console.log(e))
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
+      },
+    },
+  }),
+);
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
