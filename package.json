@@ -2,6 +2,9 @@
   "name": "agenda-contatos",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "18"
+  },
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js --ignore public --ignore frontend",
