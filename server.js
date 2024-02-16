@@ -9,28 +9,32 @@ const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const helmet = require('helmet');
 const csrf = require('csurf');
-const { middlewareGlobal, checkError, csrfMiddleware } = require('./src/middlewares/middleware');
+const {
+  middlewareGlobal,
+  checkError,
+  csrfMiddleware
+} = require('./src/middlewares/middleware');
 
-
-mongoose.connect(process.env.CONNECTIONSTRING)
+mongoose
+  .connect(process.env.CONNECTIONSTRING)
   .then(() => app.emit('pronto'))
-  .catch((e) => console.log(e))
+  .catch(e => console.log(e));
 
 app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
-        "script-src": ["'self'", "code.jquery.com", "cdn.jsdelivr.net"],
-      },
-    },
-  }),
+        'script-src': ["'self'", 'code.jquery.com', 'cdn.jsdelivr.net']
+      }
+    }
+  })
 );
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, 'public')));
 
-const diasParaMilisegundos = (dias) => 1000 * 60 * 60 * 24 * dias;
+const diasParaMilisegundos = dias => 1000 * 60 * 60 * 24 * dias;
 const sessionOptions = session({
   secret: 'segredo secreto',
   store: MongoStore.create({
@@ -58,8 +62,10 @@ app.use(checkError);
 app.use(csrfMiddleware);
 app.use(routes);
 
+const port = process.env.PORT ? Number(process.env.PORT) : 3000;
+
 app.on('pronto', () => {
-  app.listen(3000, () => {
-    console.log('Rodando em http://localhost:3000');
+  app.listen(port, () => {
+    console.log(`Rodando em http://localhost:${port}`);
   });
 });
