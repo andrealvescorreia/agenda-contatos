@@ -6,7 +6,7 @@ Para ter permissão para realizar qualquer alteração na agenda de contatos, o 
 
 ## Acesso à Aplicação
 
-Caso você queira visualizar a aplicação em funcionamento sem a necessidade de rodar o projeto em sua própria máquina, você pode acessar o [deploy](https://agenda-deploy.onrender.com/) feito no [render.com](https://render.com). Por favor, note que devido ao plano gratuito utilizado, pode ser necessário aguardar alguns segundos enquanto o servidor "acorda", ou até mesmo pode estar fora do ar.
+Caso você queira visualizar a aplicação em funcionamento sem a necessidade de rodar o projeto em sua própria máquina, você pode acessar o [deploy](https://agenda-deploy.onrender.com/) feito no [render.com](https://render.com). Por favor, note que devido ao plano gratuito utilizado, pode ser necessário aguardar alguns segundos enquanto o servidor "acorda", podendo até estar fora do ar.
 
 ## Aprendizados
 Nessa aplicação eu aprendi sobre:
@@ -23,7 +23,7 @@ instale as dependencias com ```npm install``` <br>
 crie um .env:
 ```env 
 CONNECTIONSTRING=
-#ex: CONNECTIONSTRING="mongodb://localhost:27017/meubancodedados"
+# ex: CONNECTIONSTRING="mongodb://localhost:27017/meubancodedados"
 ```
 
 execute o comando ```npx webpack``` para fazer bundle dos arquivos, e por fim
