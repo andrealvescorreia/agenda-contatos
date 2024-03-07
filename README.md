@@ -15,8 +15,9 @@ Nessa aplicação eu aprendi sobre:
 * como criar páginas HTML com Javascript embutido por meio do EJS 🖥️
 * como conectar uma aplicação em Node com o MongoDB por meio do mongoose 🌿
 * o uso de midllewares para tratamento de erros ⚙️
-* aumentar a segurança da aplicação usando headers HTTP por meio do helmet 🔒
-* como criar bundles de código javascript por meio do webpack 📦
+* aumentar a segurança da aplicação usando headers HTTP por meio do helmet 🪪
+* proteger senhas usando criptografia por meio do bcryptjs 🔒
+* criação de bundles de código javascript por meio do webpack 📦
 
 ## Como rodar
 instale as dependencias com ```npm install``` <br>
