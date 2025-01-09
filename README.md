@@ -1,12 +1,12 @@
 # Agenda de Contatos MVC
 
-Esta é uma aplicação MVC extremamente simples desenvolvida com o objetivo de permitir que os usuários criem, atualizem e excluam contatos em uma agenda. Cada contato é composto por nome, sobrenome, email e telefone.
+Esta é uma aplicação que segue o padrão MVC, simples e desenvolvida com o objetivo de permitir que os usuários criem, atualizem e excluam contatos em uma agenda. Cada contato é composto por nome, sobrenome, email e telefone.
 
 Para ter permissão para realizar qualquer alteração na agenda de contatos, o usuário deve criar uma conta com um email e senha.
 
 ## Acesso à Aplicação
 
-Caso você queira visualizar a aplicação em funcionamento sem a necessidade de rodar o projeto em sua própria máquina, você pode acessar o [deploy](https://agenda-deploy.onrender.com/) feito no [render.com](https://render.com). Por favor, note que devido ao plano gratuito utilizado, pode ser necessário aguardar alguns segundos enquanto o servidor "acorda", podendo até estar fora do ar.
+Caso você queira visualizar a aplicação em funcionamento sem a necessidade de rodar o projeto em sua própria máquina, você pode acessar o [deploy](https://agenda-deploy.onrender.com/) feito no [render.com](https://render.com). Por favor, note que devido ao plano gratuito utilizado para o deploy, pode ser necessário aguardar alguns segundos enquanto o servidor "acorda".
 
 ## Aprendizados
 Nessa aplicação eu aprendi sobre:
